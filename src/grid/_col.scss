@@ -4,7 +4,7 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
-			%rules {
+			@include breakpoint($breakpoint, up) {
 				@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2, $col-clip-low, $col-clip-high);
 
 				flex: 1 0 0;
@@ -27,14 +27,6 @@
 							margin-left: (100% / $grid-cols) * $c;
 						}
 					}
-				}
-			}
-
-			@if ($i == 1) {
-				@extend %rules;
-			} @else {
-				@include breakpoint($breakpoint, up) {
-					@extend %rules;
 				}
 			}
 		}

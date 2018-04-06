@@ -27,7 +27,7 @@ rules:
   leading-zero: 0
   mixin-name-format: 1
   mixins-before-declarations: 1
-  no-extends: 0
+  no-extends: 1
   no-qualifying-elements: 0
   placeholder-name-format:
     - 1

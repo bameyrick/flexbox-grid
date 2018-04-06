@@ -4,17 +4,9 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
-			%rules {
+			@include breakpoint($breakpoint, up) {
 				justify-content: flex-start;
-				text-align: left;
-			}
-
-			@if ($i == 1) {
-				@extend %rules;
-			} @else {
-				@include breakpoint($breakpoint, up) {
-					@extend %rules;
-				}
+				text-align: start;
 			}
 		}
 	}

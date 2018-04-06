@@ -4,16 +4,8 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
-			%rules {
+			@include breakpoint($breakpoint, up) {
 				align-items: flex-start;
-			}
-
-			@if ($i == 1) {
-				@extend %rules;
-			} @else {
-				@include breakpoint($breakpoint, up) {
-					@extend %rules;
-				}
 			}
 		}
 	}

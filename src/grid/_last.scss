@@ -4,16 +4,8 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
-			%rules {
+			@include breakpoint($breakpoint, up) {
 				order: 1;
-			}
-
-			@if ($i == 1) {
-				@extend %rules;
-			} @else {
-				@include breakpoint($breakpoint, up) {
-					@extend %rules;
-				}
 			}
 		}
 	}
