@@ -4,9 +4,18 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
-			@include breakpoint($breakpoint, up) {
+			%rules {
 				justify-content: space-between;
 			}
+
+			@if ($i == 1) {
+				@extend %rules;
+			} @else {
+				@include breakpoint($breakpoint, up) {
+					@extend %rules;
+				}
+			}
+		
 		}
 	}
 }
