@@ -1,0 +1,32 @@
+/*  ---------------------------------------------------
+    Breakpoints
+------------------------------------------------------- */
+
+$mobile: 420px !default;
+$tablet: 768px !default;
+$tablet-landscape: 1024px !default;
+$desktop: 1366px !default;
+$desktop-large: 1560px !default;
+
+/*  ---------------------------------------------------
+    Grid
+------------------------------------------------------- */
+
+$grid-cols: 12 !default;
+
+$col-spacing-large: 30px !default;
+$col-spacing-small: 10px !default;
+
+$col-spacing-large-narrow: 10px !default;
+$col-spacing-small-narrow: 5px !default;
+
+$col-sm-start: $tablet !default;
+$col-md-start: $tablet-landscape !default;
+$col-lg-start: $desktop !default;
+$col-xl-start: $desktop-large !default;
+
+$col-clip-low: $mobile !default;
+$col-clip-high: $col-md-start !default;
+
+$col-sizes: 'xs', 'sm', 'md', 'lg', 'xl';
+$col-breakpoints: '0px', $col-sm-start, $col-md-start, $col-lg-start, $col-xl-start;
