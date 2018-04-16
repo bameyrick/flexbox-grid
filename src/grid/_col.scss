@@ -4,16 +4,18 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
-			@include breakpoint($breakpoint, up) {
-				@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2, $col-clip-low, $col-clip-high);
+			@for $c from 1 through $grid-cols {
+				&-#{$c} {
+					@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2, $col-clip-low, $col-clip-high);
+				}
+			}
 
+			@include breakpoint($breakpoint, up) {
 				flex: 1 0 0;
 				max-width: 100%;
 
 				@for $c from 1 through $grid-cols {
 					&-#{$c} {
-						@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2, $col-clip-low, $col-clip-high);
-
 						$basis: (100% / $grid-cols) * $c;
 
 						flex: 0 0 $basis;
