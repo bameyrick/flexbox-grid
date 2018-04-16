@@ -4,6 +4,8 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
+			@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2, $col-clip-low, $col-clip-high);
+			
 			@for $c from 1 through $grid-cols {
 				&-#{$c} {
 					@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2, $col-clip-low, $col-clip-high);
