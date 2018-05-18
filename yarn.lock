@@ -2266,7 +2266,7 @@ safe-regex@^1.1.0:
 
 "sass-helpers@https://github.com/bameyrick/sass-helpers":
   version "1.0.0"
-  resolved "https://github.com/bameyrick/sass-helpers#dc9cc1eab2cd45216733479623a7c9a4cd1a9deb"
+  resolved "https://github.com/bameyrick/sass-helpers#441b71537991c1634b1ce3f752bc34157b9c4ae7"
   dependencies:
     SassyCast "https://github.com/bameyrick/SassyCast.git"
 
