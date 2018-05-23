@@ -1,206 +1,492 @@
-.Container
-	header.Header
-		h1.Header__title Flexbox Grid
-		p A responsive SASS grid system that utilises flexbox and fluid spacings.
-		.Header__btns
-			a.Header__btn.Btn(href="https://github.com/bameyrick/flexbox-grid") Github
+doctype html
+html
+	head
+		title Flexbox grid
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+	body
+		.Container
+			header.Header
+				h1.Header__title Flexbox Grid
+				p A responsive SASS grid system that utilises flexbox and fluid spacings.
+				.Header__btns
+					a.Header__btn.Btn(href="https://github.com/bameyrick/flexbox-grid") Github
 
-section.Section
-	.Container
-		h2.Section__title Responsive
-		p Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xs, sm, md, lg &amp; xl viewport widths.
-		pre
-			code.html
-				| #{'<div class="row">'}
-				|   #{'<div class="col-xs-12 col-sm-8 col-md-7 col-lg-2 col-xl-4">Responsive</div>'}
-				| #{'</div>'}
+		section.Section
+			.Container
+				h2.Section__title Responsive
+				p Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xs, sm, md, lg &amp; xl viewport widths.
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs-12 col-sm-8 col-md-7 col-lg-2 col-xl-4">Responsive</div>'}
+						| #{'</div>'}
 
-		h3.Example__title Example
+				h3.Example__title Example
 
-	.Container.Container--wide
-		.Example
-			.Example__row.row
-				.col-xs-12.col-sm-3.col-md-2
-					.Example__col
-				.col-xs-12.col-sm-6.col-md-8
-					.Example__col
-				.col-xs-12.col-sm-3.col-md-2
-					.Example__col
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs-12.col-sm-3.col-md-2
+							.Example__col
+						.col-xs-12.col-sm-6.col-md-8
+							.Example__col
+						.col-xs-12.col-sm-3.col-md-2
+							.Example__col
+					
+					.Example__row.row
+						.col-xs-6.col-sm-7.col-md-9
+							.Example__col
+						.col-xs-6.col-sm-5.col-md-3
+							.Example__col
+
+					.Example__row.row
+						.col-xs-4.col-sm-6.col-md-1
+							.Example__col
+						.col-xs-8.col-sm-6.col-md-11
+							.Example__col
+
+		section.Section
+			.Container
+				h2.Section__title Fluid
+				p Percent based widths allow fluid resizing of columns and rows. Fluid column spacing blends column spacing between narrow spacing on mobile and wide spacing on desktop.
+
+				h3.Example__title Example
+
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs-12
+							.Example__col
+					
+					- for (let i = 1; i < 6; i++) {
+						.Example__row.row
+							div(class=('col-xs-') + i)
+								.Example__col
+							div(class=('col-xs-') + (12 - i))
+								.Example__col
+					- }
+					
+
+		section.Section
+			.Container
+				h2.Section__title Offsets
+				p Offset columns responsively.
+
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs-9 col-xs-offset-3 col-md-7 col-md-offset-2">Offsets</div>'}
+						| #{'</div>'}
+
+				h3.Example__title Example
+
+			.Container.Container--wide
+				.Example
+					- for (let i = 1; i < 12; i++) {
+						.Example__row.row
+							div(class=('col-xs-') + i + (' col-xs-offset-') + (12 - i))
+								.Example__col
+					- }
+
+		section.Section
+			.Container
+				h2.Section__title Automatic width
+				p Add any number of auto sizing columns to a row. Let the grid figure it out.
+
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs-3">Set width</div>'}
+						|   #{'<div class="col-xs">Auto width</div>'}
+						|   #{'<div class="col-xs-2">Set width</div>'}
+						| #{'</div>'}
+
+				h3.Example__title Example
+
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs
+							.Example__col
+						.col-xs
+							.Example__col
+					.Example__row.row
+						.col-xs-3
+							.Example__col
+						.col-xs
+							.Example__col
+						.col-xs-2
+							.Example__col
+
+		section.Section
+			.Container
+				h2.Section__title Nested grids
+				p Nest grids inside grids inside grids.
+
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs">'}
+						|     #{'<div class="row">'}
+						|       #{'<div class="col-xs-12">Nested</div>'}
+						|     #{'</div>'}
+						|   #{'</div>'}
+						| #{'</div>'}
+
+				h3.Example__title Example
+
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs-7
+							.Example__col.Example__col--1
+								.row
+									.col-xs-3
+										.Example__col.Example__col--2
+									.col-xs-9
+										.Example__col.Example__col--2
+						.col-xs-5
+							.Example__col.Example__col--1
+								.row
+									.col-xs-6
+										.Example__col.Example__col--2
+									.col-xs-6
+										.Example__col.Example__col--2
+
+		section.Section
+			.Container
+				h2.Section__title Alignment
+				p Add classes to align elements to the start or end of a row as well as the top, bottom, or center of a column.
+
+			.Container
+				h3 .start-
+
+				pre
+					code.html
+						| #{'<div class="row start-xs">'}
+						|   #{'<div class="col-xs-6">start</div>'}
+						| #{'</div>'}
 			
-			.Example__row.row
-				.col-xs-6.col-sm-7.col-md-9
-					.Example__col
-				.col-xs-6.col-sm-5.col-md-3
-					.Example__col
-
-			.Example__row.row
-				.col-xs-4.col-sm-6.col-md-1
-					.Example__col
-				.col-xs-8.col-sm-6.col-md-11
-					.Example__col
-
-section.Section
-	.Container
-		h2.Section__title Fluid
-		p Percent based widths allow fluid resizing of columns and rows. Fluid column spacing blends column spacing between narrow spacing on mobile and wide spacing on desktop.
-
-		h3.Example__title Example
-
-	.Container.Container--wide
-		.Example
-			.Example__row.row
-				.col-xs-12
-					.Example__col
+			.Container.Container--wide
+				.Example
+					.Example__row.row.start-xs
+						.col-xs-6
+							.Example__col
 			
-			- for (let i = 1; i < 6; i++) {
-				.Example__row.row
-					div(class=('col-xs-') + i)
-						.Example__col
-					div(class=('col-xs-') + (12 - i))
-						.Example__col
-			- }
+			.Container
+				h3 .center-
+
+				pre
+					code.html
+						| #{'<div class="row center-xs">'}
+						|   #{'<div class="col-xs-6">center</div>'}
+						| #{'</div>'}
 			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.center-xs
+						.col-xs-6
+							.Example__col
 
-section.Section
-	.Container
-		h2.Section__title Offsets
-		p Offset columns responsively.
+			.Container
+				h3 .end-
 
-		pre
-			code.html
-				| #{'<div class="row">'}
-				|   #{'<div class="col-xs-9 col-xs-offset-3 col-md-7 col-md-offset-2">Offsets</div>'}
-				| #{'</div>'}
+				pre
+					code.html
+						| #{'<div class="row end-xs">'}
+						|   #{'<div class="col-xs-6">end</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.end-xs
+						.col-xs-6
+							.Example__col
 
-		h3.Example__title Example
+			.Container
+				h3 Example showing different alignments across breakpoints
 
-	.Container.Container--wide
-		.Example
-			- for (let i = 1; i < 12; i++) {
-				.Example__row.row
-					div(class=('col-xs-') + i + (' col-xs-offset-') + (12 - i))
-						.Example__col
-			- }
+			.Container.Container--wide
+				.Example
+					.Example__row.row.start-xs.center-sm.end-md
+						.col-xs-6
+							.Example__col
 
-section.Section
-	.Container
-		h2.Section__title Automatic width
-		p Add any number of auto sizing columns to a row. Let the grid figure it out.
+			.Container
+				h3 .top-
 
-		pre
-			code.html
-				| #{'<div class="row">'}
-				|   #{'<div class="col-xs-3">Set width</div>'}
-				|   #{'<div class="col-xs">Auto width</div>'}
-				|   #{'<div class="col-xs-2">Set width</div>'}
-				| #{'</div>'}
+				pre
+					code.html
+						| #{'<div class="row top-xs">'}
+						|   #{'<div class="col-xs-6">top</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.top-xs
+						.col-xs-6
+							.Example__col.Example__col--tall
+						.col-xs-6
+							.Example__col
+			
+			.Container
+				h3 .middle-
 
-		h3.Example__title Example
+				pre
+					code.html
+						| #{'<div class="row middle-xs">'}
+						|   #{'<div class="col-xs-6">middle</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.middle-xs
+						.col-xs-6
+							.Example__col.Example__col--tall
+						.col-xs-6
+							.Example__col
+			
+			.Container
+				h3 .bottom-
 
-	.Container.Container--wide
-		.Example
-			.Example__row.row
-				.col-xs
-					.Example__col
-				.col-xs
-					.Example__col
-			.Example__row.row
-				.col-xs-3
-					.Example__col
-				.col-xs
-					.Example__col
-				.col-xs-2
-					.Example__col
+				pre
+					code.html
+						| #{'<div class="row bottom-xs">'}
+						|   #{'<div class="col-xs-6">bottom</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.bottom-xs
+						.col-xs-6
+							.Example__col.Example__col--tall
+						.col-xs-6
+							.Example__col
 
-section.Section
-	.Container
-		h2.Section__title Nested grids
-		p Nest grids inside grids inside grids.
+		section.Section
+			.Container
+				h2.Section__title Distribution
+				p Add classes to distribute the contents of a row or column.
 
-		pre
-			code.html
-				| #{'<div class="row">'}
-				|   #{'<div class="col-xs">'}
-				|     #{'<div class="row">'}
-				|       #{'<div class="col-xs-12">Nested</div>'}
-				|     #{'</div>'}
-				|   #{'</div>'}
-				| #{'</div>'}
+			.Container
+				h3 .around-
 
-		h3.Example__title Example
+				pre
+					code.html
+						| #{'<div class="row around-xs">'}
+						|   #{'<div class="col-xs-6">around</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.around-xs
+						.col-xs-2
+							.Example__col
+						.col-xs-2
+							.Example__col
+						.col-xs-2
+							.Example__col
+			
+			.Container
+				h3 .between-
 
-	.Container.Container--wide
-		.Example
-			.Example__row.row
-				.col-xs-7
-					.Example__col.Example__col--1
-						.row
-							.col-xs-3
-								.Example__col.Example__col--2
-							.col-xs-9
-								.Example__col.Example__col--2
-				.col-xs-5
-					.Example__col.Example__col--1
-						.row
-							.col-xs-6
-								.Example__col.Example__col--2
-							.col-xs-6
-								.Example__col.Example__col--2
+				pre
+					code.html
+						| #{'<div class="row between-xs">'}
+						|   #{'<div class="col-xs-6">between</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.between-xs
+						.col-xs-2
+							.Example__col
+						.col-xs-2
+							.Example__col
+						.col-xs-2
+							.Example__col
 
-section.Section
-	.Container
-		h2.Section__title Alignment
-		p Add classes to align elements to the start or end of a row as well as the top, bottom, or center of a column.
+		section.Section
+			.Container
+				h2.Section__title Reordering
+				p Add classes to reorder columns.
 
-		h3 .start-
+			.Container
+				h3 .first-
+				p Forces column to appear first.
 
-		pre
-			code.html
-				| #{'<div class="row start-xs">'}
-				|   #{'<div class="col-xs-6">start</div>'}
-				| #{'</div>'}
-	
-	.Container.Container--wide
-		.Example
-			.Example__row.row.start-xs
-				.col-xs-6
-					.Example__col
-	
-	.Container
-		h3 .center-
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs-2">1</div>'}
+						|   #{'<div class="col-xs-2">2</div>'}
+						|   #{'<div class="col-xs-2 first-xs">3</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs-2
+							.Example__col 1
+						.col-xs-2
+							.Example__col 2
+						.col-xs-2
+							.Example__col 3
+						.col-xs-2
+							.Example__col 4
+						.col-xs-2
+							.Example__col 5
+						.col-xs-2.first-xs
+							.Example__col.Example__col--active 6
+			
+			.Container
+				h3 .last-
+				p Forces column to appear last.
 
-		pre
-			code.html
-				| #{'<div class="row center-xs">'}
-				|   #{'<div class="col-xs-6">center</div>'}
-				| #{'</div>'}
-	
-	.Container.Container--wide
-		.Example
-			.Example__row.row.center-xs
-				.col-xs-6
-					.Example__col
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs-2 last-xs">1</div>'}
+						|   #{'<div class="col-xs-2">2</div>'}
+						|   #{'<div class="col-xs-2s">3</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs-2.last-xs
+							.Example__col.Example__col--active 1
+						.col-xs-2
+							.Example__col 2
+						.col-xs-2
+							.Example__col 3
+						.col-xs-2
+							.Example__col 4
+						.col-xs-2
+							.Example__col 5
+						.col-xs-2
+							.Example__col 6
+			
+			.Container
+				h3 .initial-order-
+				p Resets a column to its initial order.
 
-	.Container
-		h3 .end-
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs-2">1</div>'}
+						|   #{'<div class="col-xs-2 first-xs last-sm initial-order-md">2</div>'}
+						|   #{'<div class="col-xs-2">3</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs-2
+							.Example__col 1
+						.col-xs-2
+							.Example__col 2
+						.col-xs-2.first-xs.last-sm.initial-order-md
+							.Example__col.Example__col--active  3
+						.col-xs-2
+							.Example__col 4
+						.col-xs-2
+							.Example__col 5
+						.col-xs-2
+							.Example__col 6
 
-		pre
-			code.html
-				| #{'<div class="row end-xs">'}
-				|   #{'<div class="col-xs-6">end</div>'}
-				| #{'</div>'}
-	
-	.Container.Container--wide
-		.Example
-			.Example__row.row.end-xs
-				.col-xs-6
-					.Example__col
+		section.Section
+			.Container
+				h2.Section__title Reversing
+				p Add classes to reorder columns.
 
-	.Container
-		h3 Example showing different alignments across breakpoints
+				pre
+					code.html
+						| #{'<div class="row reverse">'}
+						|   #{'<div class="col-xs-2">1</div>'}
+						|   #{'<div class="col-xs-2">2</div>'}
+						|   #{'<div class="col-xs-2">3</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row.reverse
+						.col-xs-2
+							.Example__col 1
+						.col-xs-2
+							.Example__col 2
+						.col-xs-2
+							.Example__col 3
+						.col-xs-2
+							.Example__col 4
+						.col-xs-2
+							.Example__col 5
+						.col-xs-2
+							.Example__col 6
 
-	.Container.Container--wide
-		.Example
-			.Example__row.row.start-xs.center-sm.end-md
-				.col-xs-6
-					.Example__col
+		section.Section
+			.Container
+				h2.Section__title Hiding
+				p Add classes to hide items.
+
+				pre
+					code.html
+						| #{'<div class="row">'}
+						|   #{'<div class="col-xs hidden-xs">xs</div>'}
+						|   #{'<div class="col-xs hidden-sm">sm</div>'}
+						|   #{'<div class="col-xs hidden-md">md</div>'}
+						|   #{'<div class="col-xs hidden-lg">lg</div>'}
+						|   #{'<div class="col-xs hidden-xl">xl</div>'}
+						| #{'</div>'}
+			
+			.Container.Container--wide
+				.Example
+					.Example__row.row
+						.col-xs.hidden-xs
+							.Example__col xs
+						.col-xs.hidden-sm
+							.Example__col sm
+						.col-xs.hidden-md
+							.Example__col md
+						.col-xs.hidden-lg
+							.Example__col lg
+						.col-xs.hidden-xl
+							.Example__col xl
+			
+		section.Section
+			.Container
+				h2.Section__title Default settings
+				pre
+					code.scss
+						| /*  ---------------------------------------------------
+						|     Breakpoints
+						| ------------------------------------------------------- */
+						|
+						| $mobile: 420px !default;
+						| $tablet: 768px !default;
+						| $tablet-landscape: 1024px !default;
+						| $desktop: 1366px !default;
+						| $desktop-large: 1560px !default;
+						|
+						| /*  ---------------------------------------------------
+						|     Grid
+						| ------------------------------------------------------- */
+						|
+						| $grid-cols: 12 !default;
+						|
+						| $col-spacing-large: 30px !default;
+						| $col-spacing-small: 10px !default;
+						|
+						| $col-spacing-large-narrow: 10px !default;
+						| $col-spacing-small-narrow: 5px !default;
+						|
+						| $col-sm-start: $tablet !default;
+						| $col-md-start: $tablet-landscape !default;
+						| $col-lg-start: $desktop !default;
+						| $col-xl-start: $desktop-large !default;
+						|
+						| $col-clip-low: $mobile !default;
+						| $col-clip-high: $col-md-start !default;
+						|
+						| $col-sizes: 'xs', 'sm', 'md', 'lg', 'xl';
+						| $col-breakpoints: '0px', $col-sm-start, $col-md-start, $col-lg-start, $col-xl-start;

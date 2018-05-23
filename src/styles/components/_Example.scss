@@ -13,16 +13,28 @@
 	&__col {
 		@include padding-vertical($col-spacing-small, $col-spacing-large);
 		@include margin-bottom($col-spacing-small, $col-spacing-large);
+		@include bold-weight;
+		@include pica;
 
 		background: $blue;
+		text-align: center;
+		color: $white;
 
 		&--1 {
 			@include padding-horizontal($col-spacing-small, $col-spacing-large);
 		}
 
 		&--2 {
-			background: darken($blue, 20%);
 			margin-bottom: 0 !important;
+		}
+
+		&--tall {
+			@include padding-vertical($col-spacing-small * 2, $col-spacing-large * 2);
+		}
+
+		&--active,
+		&--2 {
+			background: darken($blue, 20%);
 		}
 	}
 }

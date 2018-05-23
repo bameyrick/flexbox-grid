@@ -1,0 +1,84 @@
+<!DOCTYPE html><html><head><title>Flexbox grid</title><meta name="viewport" content="width=device-width,initial-scale=1"><link href="styles.8dcda5e779155f69bc38.css" rel="stylesheet"></head><body><div class="Container"><header class="Header"><h1 class="Header__title">Flexbox Grid</h1><p>A responsive SASS grid system that utilises flexbox and fluid spacings.</p><div class="Header__btns"><a class="Header__btn Btn" href="https://github.com/bameyrick/flexbox-grid">Github</a></div></header></div><section class="Section"><div class="Container"><h2 class="Section__title">Responsive</h2><p>Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xs, sm, md, lg &amp; xl viewport widths.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-12 col-sm-8 col-md-7 col-lg-2 col-xl-4&quot;&gt;Responsive&lt;/div&gt;
+&lt;/div&gt;</code></pre><h3 class="Example__title">Example</h3></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs-12 col-sm-3 col-md-2"><div class="Example__col"></div></div><div class="col-xs-12 col-sm-6 col-md-8"><div class="Example__col"></div></div><div class="col-xs-12 col-sm-3 col-md-2"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-6 col-sm-7 col-md-9"><div class="Example__col"></div></div><div class="col-xs-6 col-sm-5 col-md-3"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-4 col-sm-6 col-md-1"><div class="Example__col"></div></div><div class="col-xs-8 col-sm-6 col-md-11"><div class="Example__col"></div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Fluid</h2><p>Percent based widths allow fluid resizing of columns and rows. Fluid column spacing blends column spacing between narrow spacing on mobile and wide spacing on desktop.</p><h3 class="Example__title">Example</h3></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs-12"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-1"><div class="Example__col"></div></div><div class="col-xs-11"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-2"><div class="Example__col"></div></div><div class="col-xs-10"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-3"><div class="Example__col"></div></div><div class="col-xs-9"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-4"><div class="Example__col"></div></div><div class="col-xs-8"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-5"><div class="Example__col"></div></div><div class="col-xs-7"><div class="Example__col"></div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Offsets</h2><p>Offset columns responsively.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-9 col-xs-offset-3 col-md-7 col-md-offset-2&quot;&gt;Offsets&lt;/div&gt;
+&lt;/div&gt;</code></pre><h3 class="Example__title">Example</h3></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs-1 col-xs-offset-11"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-2 col-xs-offset-10"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-3 col-xs-offset-9"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-4 col-xs-offset-8"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-5 col-xs-offset-7"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-6 col-xs-offset-6"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-7 col-xs-offset-5"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-8 col-xs-offset-4"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-9 col-xs-offset-3"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-10 col-xs-offset-2"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-11 col-xs-offset-1"><div class="Example__col"></div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Automatic width</h2><p>Add any number of auto sizing columns to a row. Let the grid figure it out.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-3&quot;&gt;Set width&lt;/div&gt;
+  &lt;div class=&quot;col-xs&quot;&gt;Auto width&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;Set width&lt;/div&gt;
+&lt;/div&gt;</code></pre><h3 class="Example__title">Example</h3></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs"><div class="Example__col"></div></div><div class="col-xs"><div class="Example__col"></div></div></div><div class="Example__row row"><div class="col-xs-3"><div class="Example__col"></div></div><div class="col-xs"><div class="Example__col"></div></div><div class="col-xs-2"><div class="Example__col"></div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Nested grids</h2><p>Nest grids inside grids inside grids.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-xs-12&quot;&gt;Nested&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><h3 class="Example__title">Example</h3></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs-7"><div class="Example__col Example__col--1"><div class="row"><div class="col-xs-3"><div class="Example__col Example__col--2"></div></div><div class="col-xs-9"><div class="Example__col Example__col--2"></div></div></div></div></div><div class="col-xs-5"><div class="Example__col Example__col--1"><div class="row"><div class="col-xs-6"><div class="Example__col Example__col--2"></div></div><div class="col-xs-6"><div class="Example__col Example__col--2"></div></div></div></div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Alignment</h2><p>Add classes to align elements to the start or end of a row as well as the top, bottom, or center of a column.</p></div><div class="Container"><h3>.start-</h3><pre><code class="html">&lt;div class=&quot;row start-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;start&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row start-xs"><div class="col-xs-6"><div class="Example__col"></div></div></div></div></div><div class="Container"><h3>.center-</h3><pre><code class="html">&lt;div class=&quot;row center-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;center&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row center-xs"><div class="col-xs-6"><div class="Example__col"></div></div></div></div></div><div class="Container"><h3>.end-</h3><pre><code class="html">&lt;div class=&quot;row end-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;end&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row end-xs"><div class="col-xs-6"><div class="Example__col"></div></div></div></div></div><div class="Container"><h3>Example showing different alignments across breakpoints</h3></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row start-xs center-sm end-md"><div class="col-xs-6"><div class="Example__col"></div></div></div></div></div><div class="Container"><h3>.top-</h3><pre><code class="html">&lt;div class=&quot;row top-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;top&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row top-xs"><div class="col-xs-6"><div class="Example__col Example__col--tall"></div></div><div class="col-xs-6"><div class="Example__col"></div></div></div></div></div><div class="Container"><h3>.middle-</h3><pre><code class="html">&lt;div class=&quot;row middle-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;middle&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row middle-xs"><div class="col-xs-6"><div class="Example__col Example__col--tall"></div></div><div class="col-xs-6"><div class="Example__col"></div></div></div></div></div><div class="Container"><h3>.bottom-</h3><pre><code class="html">&lt;div class=&quot;row bottom-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;bottom&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row bottom-xs"><div class="col-xs-6"><div class="Example__col Example__col--tall"></div></div><div class="col-xs-6"><div class="Example__col"></div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Distribution</h2><p>Add classes to distribute the contents of a row or column.</p></div><div class="Container"><h3>.around-</h3><pre><code class="html">&lt;div class=&quot;row around-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;around&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row around-xs"><div class="col-xs-2"><div class="Example__col"></div></div><div class="col-xs-2"><div class="Example__col"></div></div><div class="col-xs-2"><div class="Example__col"></div></div></div></div></div><div class="Container"><h3>.between-</h3><pre><code class="html">&lt;div class=&quot;row between-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-6&quot;&gt;between&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row between-xs"><div class="col-xs-2"><div class="Example__col"></div></div><div class="col-xs-2"><div class="Example__col"></div></div><div class="col-xs-2"><div class="Example__col"></div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Reordering</h2><p>Add classes to reorder columns.</p></div><div class="Container"><h3>.first-</h3><p>Forces column to appear first.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2 first-xs&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs-2"><div class="Example__col">1</div></div><div class="col-xs-2"><div class="Example__col">2</div></div><div class="col-xs-2"><div class="Example__col">3</div></div><div class="col-xs-2"><div class="Example__col">4</div></div><div class="col-xs-2"><div class="Example__col">5</div></div><div class="col-xs-2 first-xs"><div class="Example__col Example__col--active">6</div></div></div></div></div><div class="Container"><h3>.last-</h3><p>Forces column to appear last.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-2 last-xs&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2s&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs-2 last-xs"><div class="Example__col Example__col--active">1</div></div><div class="col-xs-2"><div class="Example__col">2</div></div><div class="col-xs-2"><div class="Example__col">3</div></div><div class="col-xs-2"><div class="Example__col">4</div></div><div class="col-xs-2"><div class="Example__col">5</div></div><div class="col-xs-2"><div class="Example__col">6</div></div></div></div></div><div class="Container"><h3>.initial-order-</h3><p>Resets a column to its initial order.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2 first-xs last-sm initial-order-md&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs-2"><div class="Example__col">1</div></div><div class="col-xs-2"><div class="Example__col">2</div></div><div class="col-xs-2 first-xs last-sm initial-order-md"><div class="Example__col Example__col--active"> 3</div></div><div class="col-xs-2"><div class="Example__col">4</div></div><div class="col-xs-2"><div class="Example__col">5</div></div><div class="col-xs-2"><div class="Example__col">6</div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Reversing</h2><p>Add classes to reorder columns.</p><pre><code class="html">&lt;div class=&quot;row reverse&quot;&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;col-xs-2&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row reverse"><div class="col-xs-2"><div class="Example__col">1</div></div><div class="col-xs-2"><div class="Example__col">2</div></div><div class="col-xs-2"><div class="Example__col">3</div></div><div class="col-xs-2"><div class="Example__col">4</div></div><div class="col-xs-2"><div class="Example__col">5</div></div><div class="col-xs-2"><div class="Example__col">6</div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Hiding</h2><p>Add classes to hide items.</p><pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-xs hidden-xs&quot;&gt;xs&lt;/div&gt;
+  &lt;div class=&quot;col-xs hidden-sm&quot;&gt;sm&lt;/div&gt;
+  &lt;div class=&quot;col-xs hidden-md&quot;&gt;md&lt;/div&gt;
+  &lt;div class=&quot;col-xs hidden-lg&quot;&gt;lg&lt;/div&gt;
+  &lt;div class=&quot;col-xs hidden-xl&quot;&gt;xl&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="Container Container--wide"><div class="Example"><div class="Example__row row"><div class="col-xs hidden-xs"><div class="Example__col">xs</div></div><div class="col-xs hidden-sm"><div class="Example__col">sm</div></div><div class="col-xs hidden-md"><div class="Example__col">md</div></div><div class="col-xs hidden-lg"><div class="Example__col">lg</div></div><div class="col-xs hidden-xl"><div class="Example__col">xl</div></div></div></div></div></section><section class="Section"><div class="Container"><h2 class="Section__title">Default settings</h2><pre><code class="scss">/*  ---------------------------------------------------
+    Breakpoints
+------------------------------------------------------- */
+
+$mobile: 420px !default;
+$tablet: 768px !default;
+$tablet-landscape: 1024px !default;
+$desktop: 1366px !default;
+$desktop-large: 1560px !default;
+
+/*  ---------------------------------------------------
+    Grid
+------------------------------------------------------- */
+
+$grid-cols: 12 !default;
+
+$col-spacing-large: 30px !default;
+$col-spacing-small: 10px !default;
+
+$col-spacing-large-narrow: 10px !default;
+$col-spacing-small-narrow: 5px !default;
+
+$col-sm-start: $tablet !default;
+$col-md-start: $tablet-landscape !default;
+$col-lg-start: $desktop !default;
+$col-xl-start: $desktop-large !default;
+
+$col-clip-low: $mobile !default;
+$col-clip-high: $col-md-start !default;
+
+$col-sizes: 'xs', 'sm', 'md', 'lg', 'xl';
+$col-breakpoints: '0px', $col-sm-start, $col-md-start, $col-lg-start, $col-xl-start;</code></pre></div></section><script type="text/javascript" src="index.4e0243092b5d4c0f6b31.js"></script></body></html>

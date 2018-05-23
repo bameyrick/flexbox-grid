@@ -1,3 +1,5 @@
-import { initHighlightingOnLoad } from 'highlight.js';
+require.ensure([], () => {
+	const { initHighlightingOnLoad } = require('highlight.js');
 
-initHighlightingOnLoad();
+	initHighlightingOnLoad();
+});

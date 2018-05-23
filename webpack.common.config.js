@@ -4,8 +4,10 @@ const fs = require('fs');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 
-const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin } = require('webpack');
+const { NoEmitOnErrorsPlugin, NamedModulesPlugin } = require('webpack');
 const { SplitChunksPlugin } = require('webpack').optimize;
 
 const autoprefixer = require('autoprefixer');
@@ -15,7 +17,7 @@ const postcssUrl = require('postcss-url');
 const SassModuleImporter = require('sass-module-importer');
 const cssnano = require('cssnano');
 
-const devMode = process.env.NODE_ENV !== 'production';
+const entryPoints = ['inline', 'polyfills', 'sw-register', 'styles', 'vendor', 'main'];
 
 const postcssPlugins = function() {
 	// safe settings based on: https://github.com/ben-eb/cssnano/issues/358#issuecomment-283696193
@@ -73,19 +75,13 @@ module.exports = {
 	},
 
 	output: {
-		path: path.join(process.cwd(), 'dist'),
-		filename: '[name].bundle.js',
-		chunkFilename: '[id].chunk.js',
+		path: path.join(process.cwd(), 'docs'),
+		filename: '[name].js',
+		chunkFilename: '[id].js',
 	},
 
 	module: {
 		rules: [
-			{
-				enforce: 'pre',
-				test: /\.js$/,
-				loader: 'source-map-loader',
-				exclude: [/(\\|\/)node_modules(\\|\/)/],
-			},
 			{
 				test: /\.pug$/,
 				loaders: [
@@ -140,8 +136,8 @@ module.exports = {
 		new ProgressPlugin(),
 
 		new MiniCssExtractPlugin({
-			filename: devMode ? '[name].css' : '[name].[contenthash].css',
-			chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
+			filename: '[name].[contenthash].css',
+			chunkFilename: '[id].[contenthash].css',
 		}),
 
 		new SplitChunksPlugin({
@@ -166,11 +162,36 @@ module.exports = {
 			async: 'common',
 		}),
 
-		new SourceMapDevToolPlugin({
-			filename: '[file].map[query]',
-			moduleFilenameTemplate: '[resource-path]',
-			fallbackModuleFilenameTemplate: '[resource-path]?[hash]',
-			sourceRoot: 'webpack:///',
+		new HtmlWebpackPlugin({
+			filetype: 'pug',
+			template: './src/views/index.pug',
+			filename: './index.html',
+			hash: false,
+			inject: true,
+			compile: true,
+			favicon: false,
+			minify: true,
+			cache: true,
+			showErrors: true,
+			chunks: 'all',
+			excludeChunks: [],
+			excludeAssets: [/styles.*.js/],
+			title: 'Flexbox Grid',
+			xhtml: true,
+			chunksSortMode: function sort(left, right) {
+				let leftIndex = entryPoints.indexOf(left.names[0]);
+				let rightIndex = entryPoints.indexOf(right.names[0]);
+
+				if (leftIndex > rightIndex) {
+					return 1;
+				} else if (leftIndex < rightIndex) {
+					return -1;
+				} else {
+					return 0;
+				}
+			},
 		}),
+
+		new HtmlWebpackExcludeAssetsPlugin(),
 	],
 };

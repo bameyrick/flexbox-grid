@@ -7,8 +7,9 @@
 	"style": "./src/_index.scss",
 	"scripts": {
 		"start": "webpack-dev-server --config webpack.dev.config.js --port 3000 --host 0.0.0.0 --disable-host-check",
+		"build": "rm -rf ./docs && webpack --config webpack.build.config.js && rm -rf ./docs/styles.*.js",
 		"lint-staged": "lint-staged",
-		"precommit": "lint-staged"
+		"precommit": "lint-staged && yarn build"
 	},
 	"lint-staged": {
 		"*.ts": ["prettier --print-width 140 --use-tabs --single-quote --trailing-comma es5 --parser typescript --write", "git add"],
@@ -27,6 +28,7 @@
 		"css-loader": "^0.28.11",
 		"css-mqpacker": "^6.0.2",
 		"cssnano": "^3.10.0",
+		"html-webpack-exclude-assets-plugin": "^0.0.7",
 		"html-webpack-plugin": "^3.2.0",
 		"husky": "^0.14.3",
 		"lint-staged": "^7.0.4",
