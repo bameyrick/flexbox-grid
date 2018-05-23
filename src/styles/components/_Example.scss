@@ -1,0 +1,28 @@
+.Example {
+	@include padding-horizontal;
+	@include padding-top;
+	@include padding-bottom($collapse-padding-small - $col-spacing-small, $col-spacing-large - $col-spacing-large);
+	@include margin-bottom($collapse-padding-small * 1.5, $collapse-padding-large * 1.5);
+
+	background: $white;
+
+	&__title {
+		@include margin-top($collapse-padding-small * 1.5, $collapse-padding-large * 1.5);
+	}
+
+	&__col {
+		@include padding-vertical($col-spacing-small, $col-spacing-large);
+		@include margin-bottom($col-spacing-small, $col-spacing-large);
+
+		background: $blue;
+
+		&--1 {
+			@include padding-horizontal($col-spacing-small, $col-spacing-large);
+		}
+
+		&--2 {
+			background: darken($blue, 20%);
+			margin-bottom: 0 !important;
+		}
+	}
+}

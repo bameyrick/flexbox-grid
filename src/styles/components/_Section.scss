@@ -1,0 +1,13 @@
+.Section {
+	@include margin-bottom($collapse-padding-small * 1.5, $collapse-padding-large * 1.5);
+
+	&__title {
+		@include padding-top($collapse-padding-small * 1.5, $collapse-padding-large * 1.5);
+	}
+
+	&:not(:first-of-type) & {
+		&__title {
+			border-top: 1px solid $grey;
+		}
+	}
+}

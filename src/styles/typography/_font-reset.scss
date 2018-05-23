@@ -1,0 +1,54 @@
+body {
+	@include long-primer;
+	@include normal-weight;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: $base-font-family;
+	color: $base-font-colour;
+}
+
+h1 {
+	@include pargon;
+	margin: 0 0 0.5em;
+}
+
+h2 {
+	@include double-pica;
+	margin: 0 0 0.5em;
+}
+
+h3 {
+	@include great-primer;
+	margin: 0 0 0.5em;
+}
+
+h4 {
+	@include pica;
+	margin: 0 0 0.5em;
+}
+
+h5 {
+	@include long-primer;
+	margin: 0 0 1em;
+}
+
+h6 {
+	@include brevier;
+	margin: 0 0 1.125em;
+}
+
+small {
+	@include brevier;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+	@include bold-weight;
+}

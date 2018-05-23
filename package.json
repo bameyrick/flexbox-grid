@@ -6,20 +6,54 @@
 	"license": "MIT",
 	"style": "./src/_index.scss",
 	"scripts": {
+		"start": "webpack-dev-server --config webpack.dev.config.js --port 3000 --host 0.0.0.0 --disable-host-check",
 		"lint-staged": "lint-staged",
 		"precommit": "lint-staged"
 	},
 	"lint-staged": {
+		"*.ts": ["prettier --print-width 140 --use-tabs --single-quote --trailing-comma es5 --parser typescript --write", "git add"],
 		"*.scss": ["prettier --print-width 140 --use-tabs --single-quote --parser postcss --write", "git add"],
 		"*.json": ["prettier --print-width 140 --use-tabs --single-quote --trailing-comma es5 --parser json --write", "git add"]
 	},
+	"browserslist": ["last 2 versions", "not ie <= 10", "not ie_mob <= 10"],
 	"devDependencies": {
+		"@types/highlight.js": "^9.12.2",
+		"@types/node": "^10.1.2",
+		"@types/webpack": "^4.4.0",
+		"@types/webpack-env": "^1.13.6",
+		"autoprefixer": "^8.5.0",
+		"babel-loader": "^7.1.4",
+		"circular-dependency-plugin": "^5.0.2",
+		"css-loader": "^0.28.11",
+		"css-mqpacker": "^6.0.2",
+		"cssnano": "^3.10.0",
+		"html-webpack-plugin": "^3.2.0",
 		"husky": "^0.14.3",
 		"lint-staged": "^7.0.4",
+		"mini-css-extract-plugin": "^0.4.0",
+		"node-sass": "^4.9.0",
+		"postcss-loader": "^2.1.5",
+		"postcss-mq-optimize": "https://github.com/weareadjacent/postcss-mq-optimize",
+		"postcss-url": "^7.3.2",
 		"prettier": "^1.11.1",
-		"sass-lint": "^1.12.1"
+		"pug-html-loader": "^1.1.5",
+		"raw-loader": "^0.5.1",
+		"sass-lint": "^1.12.1",
+		"sass-loader": "^7.0.1",
+		"sass-module-importer": "^1.4.0",
+		"style-loader": "^0.21.0",
+		"ts-loader": "^4.3.0",
+		"tslint": "^5.10.0",
+		"tslint-plugin-prettier": "^1.3.0",
+		"typescript": "^2.8.3",
+		"webpack": "^4.8.3",
+		"webpack-cli": "^2.1.3",
+		"webpack-dev-server": "^3.1.4",
+		"webpack-merge": "^4.1.2"
 	},
 	"dependencies": {
+		"highlight.js": "^9.12.0",
+		"normalize-scss": "^7.0.1",
 		"sass-helpers": "https://github.com/bameyrick/sass-helpers"
 	}
 }
