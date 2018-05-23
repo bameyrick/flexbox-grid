@@ -9,7 +9,7 @@
 		"start": "webpack-dev-server --config webpack.dev.config.js --port 3000 --host 0.0.0.0 --disable-host-check",
 		"build": "rm -rf ./docs && webpack --config webpack.build.config.js && rm -rf ./docs/styles.*.js",
 		"lint-staged": "lint-staged",
-		"precommit": "lint-staged && yarn build"
+		"precommit": "lint-staged"
 	},
 	"lint-staged": {
 		"*.ts": ["prettier --print-width 140 --use-tabs --single-quote --trailing-comma es5 --parser typescript --write", "git add"],
