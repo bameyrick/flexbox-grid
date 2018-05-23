@@ -7,8 +7,7 @@
 	"style": "./src/_index.scss",
 	"scripts": {
 		"start": "webpack-dev-server --config webpack.dev.config.js --port 3000 --host 0.0.0.0 --disable-host-check",
-		"build":
-			"rm -rf ./index.html && rm -rf ./index.*.js && rm -rf ./0.*.chunk.js && webpack --config webpack.build.config.js && rm -rf ./styles.*.*",
+		"build": "rm -rf ./index.html && rm -rf ./index.*.js && webpack --config webpack.build.config.js && rm -rf ./styles.*.*",
 		"lint-staged": "lint-staged",
 		"precommit": "lint-staged"
 	},
