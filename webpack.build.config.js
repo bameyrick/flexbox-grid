@@ -6,7 +6,7 @@ const { EnvironmentPlugin, HashedModuleIdsPlugin } = require('webpack');
 module.exports = merge(commonConfig, {
 	output: {
 		filename: '[name].[chunkhash:20].js',
-		chunkFilename: '[id].[chunkhash:20].js',
+		chunkFilename: '[id].[chunkhash:20].chunk.js',
 	},
 
 	plugins: [
