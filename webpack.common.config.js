@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 const { NoEmitOnErrorsPlugin, NamedModulesPlugin } = require('webpack');
 const { SplitChunksPlugin } = require('webpack').optimize;
@@ -75,7 +76,7 @@ module.exports = {
 	},
 
 	output: {
-		path: path.join(process.cwd(), 'docs'),
+		path: path.join(process.cwd(), '/'),
 		filename: '[name].js',
 		chunkFilename: '[id].js',
 	},
@@ -176,6 +177,7 @@ module.exports = {
 			chunks: 'all',
 			excludeChunks: [],
 			excludeAssets: [/styles.*.js/],
+			inlineSource: '.(css)$',
 			title: 'Flexbox Grid',
 			xhtml: true,
 			chunksSortMode: function sort(left, right) {
@@ -193,5 +195,7 @@ module.exports = {
 		}),
 
 		new HtmlWebpackExcludeAssetsPlugin(),
+
+		new HtmlWebpackInlineSourcePlugin()
 	],
 };
