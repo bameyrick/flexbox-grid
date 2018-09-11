@@ -1,6 +1,6 @@
 {
 	"name": "flexbox-grid",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "index.js",
 	"author": "Ben Meyrick <bameyrick@gmail.com>",
 	"license": "MIT",

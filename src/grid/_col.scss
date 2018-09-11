@@ -1,5 +1,8 @@
-%col-padding {
-	@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2,  $clip-low: $col-clip-low, $clip-high: $col-clip-high);
+%col-base {
+	@include padding-horizontal($col-spacing-small / 2, $col-spacing-large / 2, $clip-low: $col-clip-low, $clip-high: $col-clip-high);
+
+	display: flex;
+	flex-direction: column;
 }
 
 .col {
@@ -8,11 +11,11 @@
 		$breakpoint: nth($col-breakpoints, $i);
 
 		&-#{$size} {
-			@extend %col-padding;
+			@extend %col-base;
 
 			@for $c from 1 through $grid-cols {
 				&-#{$c} {
-					@extend %col-padding;
+					@extend %col-base;
 				}
 			}
 
